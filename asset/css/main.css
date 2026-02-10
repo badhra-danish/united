@@ -115,9 +115,11 @@
   bottom: -20px;
   left: 0;
 }
+
 .arrow-down {
   transition: 0.3s;
 }
+
 .product-nav:hover .arrow-down {
   transform: rotate(180deg);
   transition: 0.3s;
@@ -195,41 +197,46 @@
   }
 }
 
-/* Hero Sections */
-
-/* 1. Parent Container - CRITICAL STEP */
 .hero-section {
-  position: relative; /* Required for the video to stay inside */
+  position: relative;
   width: 100%;
-  height: 100vh; /* Forces the section to be full screen height */
-  overflow: hidden; /* Hides any overflow */
-  background-color: #000; /* Fallback color if video doesn't load */
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
 }
-
-/* 2. Video Wrapper Position */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
 .hero-bg-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Keeps it at the bottom level */
+  z-index: 0;
 }
 
-/* 3. The Video Tag Adjustment */
 #myVideo {
   width: 100%;
-
-  object-fit: cover; /* Ensures video fills the screen without stretching */
+  object-fit: cover;
   object-position: center;
-  display: block; /* Removes any default inline gaps */
+  display: block;
 }
+
 .gear {
   font-size: 20px;
   margin-right: 10px;
   vertical-align: middle;
   color: #014287;
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -242,86 +249,83 @@
   width: 70%;
   padding: 2rem;
 }
+
 .hero-content .content-title {
   width: 100%;
 }
+
 .hero-content .content-title h4 {
   font-size: 17px;
   font-weight: 400;
   letter-spacing: 2px;
   margin-bottom: 1rem;
 }
+
 .content-title h1 {
   font-size: 70px;
   font-weight: 200;
   line-height: 5rem;
 }
+
 .content-title h1 span {
   font-size: 65px;
   font-weight: 500;
 }
+
 .content-title p {
   font-size: 18px;
   font-weight: 250;
   font-style: normal;
   margin-top: 1rem;
 }
-/* 1. Main Button Setup */
-.hero-content .hero-btn {
-  position: relative; /* Essential for containing the slider */
-  overflow: hidden; /* Clips the slider so it stays inside the curves */
-  z-index: 1; /* Ensures text stays on top of the slider */
 
+.hero-content .hero-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   width: 25%;
   background-color: #14427e;
   padding: 0.8rem 1rem;
-  border: 2px solid #14427e; /* Adds structure */
+  border: 2px solid #14427e;
   border-radius: 25px;
   margin-top: 2rem;
   cursor: pointer;
-  transition: border-color 0.4s ease; /* Smooth border transition */
+  transition: border-color 0.4s ease;
 }
 
-/* 2. The "Slider" (Hidden Background) */
 .hero-content .hero-btn::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Start with 0 width (invisible) */
+  width: 100%;
   height: 0%;
-  background-color: #fff; /* The color that slides in */
-  z-index: -1; /* Puts the slider BEHIND the text */
-  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Professional easing */
+  background-color: #fff;
+  z-index: -1;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 3. The Animation Trigger */
 .hero-content .hero-btn:hover::before {
-  height: 100%; /* Expands to fill the button */
+  height: 100%;
 }
 
-/* 4. Text Color Change */
-/* We target the <a> tag to ensure it changes color when the slider hits */
 .hero-content .hero-btn a {
   color: #fff;
   font-size: 1rem;
   letter-spacing: 1px;
   text-decoration: none;
   transition: color 0.4s ease;
-  position: relative; /* Keeps text above the slider */
+  position: relative;
   z-index: 2;
 }
 
 .hero-content .hero-btn:hover a {
-  color: #14427e; /* Text turns blue to contrast with white slider */
+  color: #14427e;
 }
 
-/* Optional: Change border on hover to match the slider */
 .hero-content .hero-btn:hover {
   border-color: #14427e;
 }
-
-/* About Section */
 
 .about-section {
   position: relative;
@@ -329,51 +333,56 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 150vh;
 }
+
 .about-section img {
   width: 100%;
+  height: 100%;
+  background-size: cover;
 }
+
 .about-section .about-main {
   position: absolute;
   top: 0%;
   padding: 7rem 2rem;
 }
+
 .about-main .about-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
+
 .content-left {
-  position: relative; /* Essential for positioning children */
+  position: relative;
   width: 50%;
-  max-width: 600px; /* Prevents it from getting too huge */
+  max-width: 600px;
   padding-bottom: 20px;
 }
 
-/* 2. Small Image (Top Left) */
 .small-img-wrapper {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%; /* Takes up 40% of the container width */
+  width: 50%;
   z-index: 1;
 }
 
 .small-img-wrapper img {
   width: 100%;
   background-size: cover;
-  border-radius: 20px; /* Rounded corners */
-  border: 5px solid #fff; /* White border to separate from background */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Drop shadow for depth */
+  border-radius: 20px;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: block;
 }
 
-/* 3. Experience Text */
 .experience-badge {
   position: absolute;
-  top: 25px; /* Adjust vertical alignment with small image */
-  right: 10%; /* Positions it to the right side */
+  top: 25px;
+  right: 10%;
   z-index: 3;
   display: flex;
   align-items: center;
@@ -381,9 +390,9 @@
 }
 
 .experience-badge .years {
-  font-size: 3.5rem; /* Big text size */
+  font-size: 3.5rem;
   font-weight: 700;
-  color: #14427e; /* The orange color from your image */
+  color: #14427e;
   line-height: 1;
 }
 
@@ -415,18 +424,17 @@
   border-radius: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-/* --- Main Layout for Right Content --- */
+
 .content-right {
-  width: 50%; /* Adjust based on your parent container */
+  width: 50%;
   padding-left: 40px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-/* 1. Header Styling */
 .section-header .tag {
-  color: #14427e; /* Bright Orange */
+  color: #14427e;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -446,7 +454,7 @@
 }
 
 .section-header h2 span {
-  font-weight: 700; /* Bold part */
+  font-weight: 700;
 }
 
 .section-header .description {
@@ -456,7 +464,6 @@
   margin-bottom: 30px;
 }
 
-/* 2. Bottom Split Layout */
 .about-bottom {
   display: flex;
   justify-content: space-between;
@@ -464,7 +471,6 @@
   gap: 20px;
 }
 
-/* 3. Features List */
 .features-list {
   list-style: none;
   margin-bottom: 30px;
@@ -481,11 +487,10 @@
 }
 
 .features-list li i {
-  color: #14427e; /* Checkmark Color */
+  color: #14427e;
   font-size: 1.2rem;
 }
 
-/* 4. The "Learn More" Button */
 .theme-btn {
   display: inline-flex;
   align-items: center;
@@ -495,14 +500,13 @@
   border: 2px solid #14427e;
   color: #333;
   font-weight: 600;
-  border-radius: 8px; /* Slightly squarer than pill */
+  border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* Orange box for the arrow */
 .theme-btn i {
   background: #14427e;
   color: #fff;
@@ -526,31 +530,26 @@
   color: #14427e;
 }
 
-/* 5. The Rating Card (Glassmorphism / Rounded) */
 .rating-card {
-  background-color: #f9f9f9; /* Very light grey/white */
+  background-color: #f9f9f9;
   padding: 30px 40px;
-  border-radius: 30px; /* Big rounded corners */
+  border-radius: 30px;
   text-align: center;
   min-width: 220px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
-/* The Magic Text Mask for "4.9" */
 .rating-num {
   font-size: 5rem;
   font-weight: 900;
   margin: 0;
   line-height: 1;
-
-  /* This clips the background image to the text */
   background-size: cover;
   background-position: center;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent; /* Makes text see-through so image shows */
-
-  font-family: "Poppins", sans-serif; /* Ensure bold font */
+  color: transparent;
+  font-family: "Poppins", sans-serif;
 }
 
 .stars {
@@ -569,40 +568,32 @@
   margin-top: 5px;
 }
 
-/* =========================================
-   RESPONSIVE DESIGN (Add to bottom of CSS)
-   ========================================= */
-
-/* --- 1. Tablet & Small Laptops (Max Width: 1024px) --- */
 @media (max-width: 1024px) {
   .section-header h2 {
-    font-size: 2.2rem; /* Reduce font size slightly */
+    font-size: 2.2rem;
   }
 
   .large-img-wrapper {
-    width: 75%; /* Make main image slightly wider */
-    left: 0; /* Reset offset */
+    width: 75%;
+    left: 0;
   }
 
   .rating-card {
-    min-width: 180px; /* Allow card to shrink slightly */
+    min-width: 180px;
     padding: 20px;
   }
 
   .rating-num {
-    font-size: 4rem; /* Smaller number */
+    font-size: 4rem;
   }
 }
 
-/* --- 2. Tablets & iPads (Max Width: 991px) --- */
 @media (max-width: 991px) {
-  /* Switch to Single Column Layout */
   .about-main .about-content {
     flex-direction: column;
-    gap: 60px; /* Space between Image Section and Text Section */
+    gap: 60px;
   }
 
-  /* Make both sides full width */
   .content-left,
   .content-right {
     width: 100%;
@@ -610,23 +601,21 @@
     max-width: 100%;
   }
 
-  /* Center the Right Content (Text) */
   .content-right {
-    align-items: flex-start; /* Align text to left */
+    align-items: flex-start;
   }
 
-  /* Image Section Adjustments */
   .content-left {
-    height: 450px; /* Force height so absolute images don't collapse */
+    height: 450px;
     margin-bottom: 20px;
   }
 
   .large-img-wrapper {
     width: 70%;
-    margin: 0 auto; /* Center horizontally */
-    top: 80px; /* Push down slightly */
+    margin: 0 auto;
+    top: 80px;
     height: 350px;
-    left: 10%; /* Adjust alignment */
+    left: 10%;
   }
 
   .small-img-wrapper {
@@ -634,18 +623,16 @@
   }
 }
 
-/* --- 3. Mobile Devices (Max Width: 768px) --- */
 @media (max-width: 768px) {
-  /* Adjust the Bottom Split (Features + Rating) */
   .about-bottom {
-    flex-direction: column-reverse; /* Put Rating below, or column for normal stack */
+    flex-direction: column-reverse;
     gap: 40px;
     width: 100%;
   }
 
   .features-wrapper,
   .rating-card {
-    width: 100%; /* Full width */
+    width: 100%;
   }
 
   .rating-card {
@@ -655,16 +642,15 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   }
 
-  /* Image Section Tweaks for Mobile */
   .content-left {
     height: 380px;
   }
 
   .large-img-wrapper {
-    width: 85%; /* Wider image on mobile */
+    width: 85%;
     left: 0;
     right: 0;
-    margin: 0 auto; /* True Center */
+    margin: 0 auto;
     top: 70px;
     height: 300px;
   }
@@ -674,15 +660,14 @@
   }
 
   .experience-badge {
-    right: 0; /* Align to right edge */
+    right: 0;
     top: 0;
   }
 }
 
-/* --- 4. Small Mobile Screens (Max Width: 480px) --- */
 @media (max-width: 480px) {
   .section-header h2 {
-    font-size: 1.8rem; /* Readable Title Size */
+    font-size: 1.8rem;
   }
 
   .experience-badge .years {
@@ -694,20 +679,263 @@
     line-height: 1.2;
   }
 
-  /* Reset padding for the main container */
   .about-section .about-main {
     padding: 4rem 1.5rem;
   }
 
-  /* Fix Large Image cropping */
   .large-img-wrapper {
-    width: 90%;
-    border: 5px solid #fff; /* Thinner border */
+    width: 80%;
   }
 
-  /* Button full width */
   .theme-btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+.service-section {
+  width: 100%;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.service-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5rem 2rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.service-top-left {
+  width: 50%;
+}
+
+.service-top-left .tag i {
+  color: #14427e;
+}
+
+.service-top-left .tag {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.service-top-left h2 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 200;
+}
+
+.service-top-left h2 span {
+  font-weight: 600;
+  display: block;
+}
+
+.service-top-right {
+  width: 45%;
+}
+
+.service-top-right p {
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+/* --- Service Bottom Wrapper --- */
+/* This positions the whole white box */
+.service-bottom {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 10;
+  margin-top: -100px;
+}
+
+/* --- The White Box Container --- */
+.service-cards-container {
+  display: flex; /* Puts cards in a row */
+  background-color: #ffffff;
+  border-radius: 30px; /* Rounded corners like the image */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  padding: 50px 20px;
+  overflow: hidden;
+}
+
+/* --- Individual Card Styling --- */
+.service-card {
+  flex: 1; /* Makes all cards equal width */
+  padding: 0 30px;
+  border-right: 1px solid #eeeeee; /* Grey divider line */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Space between Icon, Text, Button */
+  align-items: flex-start;
+  transition: 0.3s;
+}
+
+/* Remove the border from the last card */
+.service-card:last-child {
+  border-right: none;
+}
+
+/* --- Icon Styling --- */
+.icon-box i {
+  font-size: 3.5rem; /* Large Icon */
+  color: transparent; /* Trick for outline effect */
+  -webkit-text-stroke: 1px #14427e; /* Creates the Orange Outline look */
+  /* If text-stroke isn't supported, use this fallback: */
+  /* color: #ff9900; */
+}
+
+/* --- Title Styling --- */
+.service-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+  margin-bottom: auto; /* Pushes button to bottom if text varies */
+}
+
+/* --- Arrow Button Styling --- */
+.arrow-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #f5f5f5; /* Light Grey BG */
+  border-radius: 12px; /* Soft square corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect for Button */
+.arrow-btn:hover {
+  background-color: #14427e;
+  color: #fff;
+  transform: translateX(5px); /* Subtle slide to right */
+}
+
+/* Hover Effect for the whole card (Optional) */
+.service-card:hover .icon-box i {
+  color: #14427e; /* Fill icon on hover */
+  -webkit-text-stroke: 0;
+}
+
+/* --- Responsive Design --- */
+
+/* Tablet (Stack 2x2) */
+@media (max-width: 991px) {
+  .service-cards-container {
+    flex-wrap: wrap;
+  }
+  .service-card {
+    flex: 0 0 50%; /* 2 cards per row */
+    border-right: none; /* Remove side borders */
+    border-bottom: 1px solid #eee; /* Add bottom borders */
+    padding: 30px;
+  }
+  .service-card:nth-last-child(-n + 2) {
+    border-bottom: none; /* Remove bottom border for last 2 items */
+  }
+  .service-bottom {
+    margin-top: -50px; /* Less overlap on smaller screens */
+  }
+}
+
+/* Mobile (Stack 1x1) */
+@media (max-width: 600px) {
+  .service-card {
+    flex: 0 0 100%; /* 1 card per row */
+    border-bottom: 1px solid #eee;
+  }
+  .service-card:last-child {
+    border-bottom: none;
+  }
+  .service-bottom {
+    margin-top: 0; /* No overlap on mobile, just stack below */
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .service-title {
+    position: relative;
+    height: auto;
+  }
+
+  .container img,
+  .container::after {
+    height: 100%;
+  }
+
+  .service-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-top-left,
+  .service-top-right {
+    width: 100%;
+  }
+
+  .service-top-right p {
+    margin-top: 20px;
   }
 }
