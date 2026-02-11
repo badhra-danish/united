@@ -1583,3 +1583,309 @@
     left: 85%;
   }
 }
+/* =========================================
+   PRODUCT SHOWCASE SECTION (Dark Theme)
+   ========================================= */
+
+.product-showcase-section {
+  width: 100%;
+  padding: 6rem 2rem;
+  background-color: #0b0b0b; /* Very Dark Background (matches What We Do) */
+  position: relative;
+}
+
+/* --- Header Styling --- */
+.product-header {
+  margin-bottom: 60px;
+}
+.product-header .tag i {
+  color: #14427e;
+}
+.product-header .tag {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.product-header h2 {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.product-header h2 span {
+  font-weight: 200;
+}
+.orange-line {
+  width: 100%;
+  height: 4px;
+  background-color: #14427e;
+  border-radius: 2px;
+}
+
+/* --- Grid Layout --- */
+.product-grid {
+  display: grid;
+  /* Responsive Grid: 4 cols on desktop, 2 on tablet, 1 on mobile */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Product Card Styling --- */
+.product-card {
+  background-color: #1a1a1a; /* Dark Card Background */
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Lifts up */
+  border-color: #14427e; /* Orange border on hover */
+  box-shadow: 0 10px 30px rgba(255, 153, 0, 0.15); /* Orange glow */
+}
+
+/* Image Area */
+.product-img-box {
+  width: 100%;
+  height: 220px;
+  background-color: #fff; /* Keep image bg white so vehicles pop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-img-box img {
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+/* Zoom Image on Hover */
+.product-card:hover .product-img-box img {
+  transform: scale(1.1);
+}
+
+/* Dark Overlay on Hover */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .overlay {
+  opacity: 1; /* Show on hover */
+}
+
+/* "View Details" Button */
+.view-btn {
+  background-color: #14427e;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transform: translateY(20px); /* Start slightly lower */
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .view-btn {
+  transform: translateY(0); /* Slide up */
+}
+
+/* Info Area (Bottom) */
+.product-info {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.product-info h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.product-info p {
+  color: #888; /* Grey text */
+  font-size: 0.9rem;
+}
+
+.product-card:hover .product-info h3 {
+  color: #14427e; /* Title turns orange on hover */
+}
+/*  SLider of the Product */
+/* =========================================
+   INFINITE CLIENT SLIDER (Professional)
+   ========================================= */
+
+.client-slider-container {
+  width: 100%;
+  padding: 40px 0;
+  margin-top: 2rem;
+  /* Dark Theme Styling */
+  background-color: #0b0b0b;
+  border-top: 1px solid #222; /* Slightly lighter border for visibility */
+  border-bottom: 1px solid #222;
+
+  /* Essential for hiding the overflow */
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Professional Fade Gradient on Edges --- */
+.client-slider-container::before,
+.client-slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px; /* Wider fade for smoother look */
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; /* Allows clicks to pass through if needed */
+}
+
+.client-slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0b0b0b 0%, transparent 100%);
+}
+
+.client-slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0b0b0b 0%, transparent 100%);
+}
+
+/* --- The Moving Track --- */
+.slider-track {
+  display: flex;
+  align-items: center;
+  /* max-content ensures the track width equals the total width of all logos */
+  width: max-content;
+  gap: 80px; /* Space between logos */
+
+  /* The Infinite Animation */
+  animation: scrollLogo 15s linear infinite;
+  will-change: transform; /* Performance optimization */
+}
+
+/* --- Individual Slide Item --- */
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slide img {
+  height: 100px; /* Adjusted height for better proportion */
+  width: auto;
+  max-width: 180px; /* Prevents extremely wide logos */
+  object-fit: contain;
+  /* Initial State: Dimmed & Grayscale */
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* --- Interactive Effects --- */
+
+/* 1. Pause Animation on Hover (Professional Touch) */
+.client-slider-container:hover .slider-track {
+  animation-play-state: paused;
+}
+
+/* 2. Light up Logos on Hover */
+.client-slider-container:hover .slide img {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05); /* Subtle pop effect */
+}
+
+/* --- The Seamless Animation --- */
+@keyframes scrollLogo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 40px));
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .client-slider-container {
+    padding: 30px 0;
+  }
+
+  .slider-track {
+    gap: 40px; /* Smaller gap on mobile */
+    animation-duration: 20s; /* Faster scroll on mobile feels better */
+  }
+
+  .slide img {
+    height: 60px; /* Smaller logos */
+  }
+
+  /* Reduce fade width on mobile so logos aren't hidden too much */
+  .client-slider-container::before,
+  .client-slider-container::after {
+    width: 60px;
+  }
+}
+/* =========================================
+   RESPONSIVE DESIGN (Add to bottom)
+   ========================================= */
+
+/* Tablet (Max Width: 1024px) */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+  }
+
+  .product-header h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile (Max Width: 600px) */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 Column */
+  }
+
+  .product-header h2 {
+    font-size: 2rem;
+  }
+
+  /* Make cards smaller on mobile */
+  .product-img-box {
+    height: 180px;
+  }
+}
