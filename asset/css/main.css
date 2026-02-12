@@ -888,7 +888,7 @@
   }
 
   .experience-badge {
-    right: 0;
+    right: 10;
     top: 0;
   }
 }
@@ -897,9 +897,15 @@
   .section-header h2 {
     font-size: 1.8rem;
   }
-
+  .experience-badge {
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    gap: 0;
+    top: 1%;
+  }
   .experience-badge .years {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   .experience-badge .text {
@@ -1879,7 +1885,9 @@
   .product-grid {
     grid-template-columns: 1fr; /* 1 Column */
   }
-
+  .product-showcase-section {
+    padding: 3rem 1.5rem;
+  }
   .product-header h2 {
     font-size: 2rem;
   }
