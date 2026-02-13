@@ -56,19 +56,33 @@
   width: auto;
 }
 .header-main.header-scrolled .nav-list ul li {
+  text-decoration: none;
+  color: #000;
+}
+.header-main.header-scrolled .nav-list ul li a {
+  text-decoration: none;
   color: #000;
 }
 .nav-list ul {
   list-style: none;
   display: flex;
   gap: 50px;
+  text-decoration: none;
 }
-
+.nav-list ul a {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
 .nav-list ul li {
   cursor: pointer;
   font-weight: 500;
   color: #fff;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .nav-list ul li:hover {
@@ -193,7 +207,9 @@
   .logo-img {
     order: 1;
   }
-
+  .logo-img img {
+    height: 50px;
+  }
   /* Hide the desktop button (if there's one outside) */
   .navbar > .nav-btn {
     display: none;
@@ -1026,7 +1042,7 @@
 .service-bottom {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   z-index: 10;
@@ -2292,7 +2308,8 @@
   align-items: center;
   justify-content: center;
   color: #14427e;
-  border: 1px solid rgba(255, 153, 0, 0.2);
+  border: 1px solid rgba(24, 78, 255, 0.2);
+  box-shadow: #14427e;
   transition: 0.3s;
   text-decoration: none;
 }
@@ -2339,7 +2356,7 @@
     padding: 50px 1.5rem 30px; /* Reduce padding */
   }
   .footer-logo {
-    width: 40%;
+    width: 44%;
   }
   /* Stack CTA vertically */
   .footer-cta {

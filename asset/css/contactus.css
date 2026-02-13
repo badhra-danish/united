@@ -1,0 +1,304 @@
+/* =========================================
+   Global Root Variables (Ensure these are at the top of your CSS file)
+   ========================================= */
+:root {
+  /* Brand Colors */
+  --primary-color: #14427e; /* The brand orange */
+  --bg-dark: #0d1216; /* Footer dark background */
+  --bg-light: #ffffff; /* Standard white background */
+
+  /* Text Colors */
+  --text-dark: #333333; /* Main headings */
+  --text-muted: #777777; /* Paragraph text */
+  --text-light: #ffffff; /* Text on dark backgrounds */
+
+  --bg-offwhite: #f9f9f9;
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius-lg: 20px;
+  --box-shadow-main: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   Container & Layout
+   ========================================= */
+.contact-section {
+  padding: 100px 2rem;
+  background-color: var(--bg-white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Form column slightly wider */
+  gap: 80px;
+  align-items: center;
+}
+
+/* =========================================
+   Left Column: Information
+   ========================================= */
+.section-title-area {
+  margin-bottom: 50px;
+}
+
+.section-title-area .subtitle {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.section-title-area h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-title-area h2 strong {
+  font-weight: 700;
+}
+
+.section-desc {
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Contact Details List */
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--bg-dark);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-light);
+  font-size: rem;
+  flex-shrink: 0;
+}
+.icon-box i {
+  color: var(--bg-light);
+  font-size: 1.7rem;
+}
+
+.text-box h4 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.text-box p {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+/* =========================================
+   Right Column: The Form
+   ========================================= */
+.form-wrapper {
+  background-color: var(--bg-light);
+  padding: 40px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-main);
+  border: 1px solid var(--bg-dark);
+}
+
+.form-wrapper h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+}
+
+.form-wrapper h3 strong {
+  font-weight: 700;
+}
+
+/* Form Layout */
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  width: 100%;
+}
+
+.split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Input Fields */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  background-color: var(--bg-white);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.input-group textarea {
+  resize: vertical;
+}
+
+/* Focus State */
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 53, 153, 0.1);
+}
+
+/* Placeholder Styling */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #a0a0a0;
+}
+
+/* =========================================
+   Split Button Styling (Submit)
+   ========================================= */
+/* 1. Main Button Wrapper */
+.btn-submit {
+  display: inline-flex;
+  align-items: stretch;
+  background: none;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 26, 197, 0.228);
+}
+
+/* 2. The Text Section (White part) */
+.btn-submit .btn-text {
+  padding: 15px 25px;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* 3. The Icon Box (Orange part) - Using your exact class name */
+.btn-submit .sumbit-btn-icon {
+  /* I removed width: 100% so it perfectly hugs the arrow */
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 4. The Arrow Icon Itself */
+.btn-submit .sumbit-btn-icon i {
+  color: var(--bg-light); /* Makes the arrow white */
+  font-size: 1.2rem; /* Adjusted so it looks proportionate to the text */
+  margin: 0;
+  padding: 0;
+}
+/* =========================================
+   Responsive Media Queries
+   ========================================= */
+@media screen and (max-width: 1024px) {
+  /* Reduce padding and gap on medium screens */
+  .contact-grid {
+    gap: 40px;
+  }
+  .form-wrapper {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /* Stack the columns on tablets */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title-area {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Full mobile view */
+  .contact-section {
+    padding: 60px 1.5rem;
+  }
+
+  .section-title-area h2 {
+    font-size: 2.2rem;
+  }
+
+  .form-wrapper {
+    padding: 30px 20px;
+  }
+
+  .form-wrapper h3 {
+    font-size: 2rem;
+  }
+
+  /* Stack the First/Last Name fields */
+  .split-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.map-section {
+  width: 100%;
+}

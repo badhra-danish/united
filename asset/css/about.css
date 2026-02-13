@@ -1,0 +1,892 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+/* Put this at the very top of your style.css file */
+
+:root {
+  /* Brand Colors */
+  --primary-color: #14427e; /* The brand orange */
+  --bg-dark: #0d1216; /* Footer dark background */
+  --bg-light: #ffffff; /* Standard white background */
+
+  /* Text Colors */
+  --text-dark: #333333; /* Main headings */
+  --text-muted: #777777; /* Paragraph text */
+  --text-light: #ffffff; /* Text on dark backgrounds */
+
+  --bg-offwhite: #f9f9f9;
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius-lg: 20px;
+  --box-shadow-main: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+/* =========================================
+   1. HERO BANNER STYLES
+   ========================================= */
+.page-hero {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust banner height */
+  background-image: url("../../images/FactoryImg1.jpg"); /* Make sure path to your image is correct */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.hero-content {
+  padding: 5rem 2rem; /* Indents the text nicely */
+}
+
+.hero-content h1 {
+  color: var(--bg-light);
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.breadcrumbs {
+  font-size: 1rem;
+}
+
+.breadcrumbs a {
+  color: var(--bg-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumbs .dot {
+  color: var(--primary-color); /* Orange dot */
+  margin: 0 8px;
+  font-size: 0.8rem;
+}
+
+.breadcrumbs .current-page {
+  color: var(--primary-color); /* Orange text for current page */
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Switch to 1 column */
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .bottom-star {
+    display: none; /* Hide on small screens for spacing */
+  }
+}
+
+.mission-section-wrapper {
+  position: relative;
+  max-width: 100%;
+  margin-top: -100px;
+  z-index: 1;
+  padding: 0 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* Removed duplicate overflow: hidden and box-shadow to prevent conflicts */
+}
+
+.section-conatiner {
+  width: 100%;
+  overflow: hidden; /* Forces children to respect rounded corners */
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   Tabs Navigation (Top Row)
+   ========================================= */
+.tab-headers {
+  display: flex;
+  background-color: var(--bg-light);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 25px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-item i {
+  font-size: 1.3rem;
+}
+
+/* The Active Tab (Orange) */
+.tab-item.active {
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+  border-bottom: none;
+}
+
+/* Hover effect for inactive tabs */
+.tab-item:not(.active):hover {
+  background-color: #fafafa;
+  color: var(--primary-color);
+}
+
+/* =========================================
+   Content Area
+   ========================================= */
+.tab-panel {
+  display: none; /* Hide all panels by default */
+}
+
+/* Only show the active panel */
+.tab-panel.active {
+  display: flex;
+  gap: 50px;
+  padding: 50px; /* Added padding here so the content doesn't touch the edges */
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left Text Column */
+.content-text-col {
+  flex: 1;
+}
+
+.content-text-col p {
+  color: #777777;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+/* Custom List Styling */
+.mission-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mission-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #444444;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Layered Icon CSS */
+.list-icon {
+  font-size: 1.1rem;
+  margin-right: 15px;
+  width: 1.5em;
+}
+
+.icon-bg {
+  color: var(--primary-color);
+}
+
+.icon-check {
+  font-size: 0.55em;
+  margin-top: 1px;
+}
+
+/* Right Image Column */
+.content-img-col {
+  flex: 1;
+}
+
+.content-img-col img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* --- TABLET (Max-width: 992px) --- */
+@media screen and (max-width: 992px) {
+  .tab-panel.active {
+    flex-direction: column; /* Stack the text on top of the image */
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .content-img-col {
+    width: 100%; /* Ensures image column takes full width when stacked */
+  }
+}
+
+/* --- LARGE MOBILE (Max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+  .mission-section-wrapper {
+    margin-top: -60px; /* Reduce negative margin so it doesn't overlap too much */
+    padding: 0 1rem; /* Smaller outer padding */
+  }
+
+  .tab-item {
+    padding: 18px 10px; /* Smaller tabs */
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .tab-item i {
+    font-size: 1rem;
+  }
+  .tab-item span {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- SMALL MOBILE (Max-width: 576px) --- */
+@media screen and (max-width: 576px) {
+  .tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0; /* Adds border between stacked tabs */
+    justify-content: center;
+  }
+
+  .tab-item.active {
+    border-bottom: none;
+  }
+
+  .tab-panel.active {
+    padding: 30px 20px; /* Reduce inner padding for small screens */
+    gap: 30px;
+  }
+
+  .content-text-col p {
+    font-size: 0.95rem; /* Slightly smaller text for readability */
+    margin-bottom: 25px;
+  }
+
+  .mission-list li {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+}
+/* =========================================
+   Responsive Media Queries
+   ========================================= */
+@media screen and (max-width: 992px) {
+  .tab-content {
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tab-item {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  /* Fix the rounding on mobile since tabs are stacked */
+  .tab-item.active {
+    border-radius: 0;
+  }
+
+  .content-text-col p {
+    font-size: 0.95rem;
+  }
+
+  .mission-list li {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================================
+   Global Root Variables
+   ========================================= */
+/* =========================================
+   Layout & Container
+   ========================================= */
+.history-section {
+  padding: 80px 2rem;
+  background-color: var(--bg-white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   Top Header Area
+   ========================================= */
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.header-left .subtitle {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.header-left h2 {
+  font-size: 3rem;
+  font-weight: 300; /* Thin font */
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.header-left h2 strong {
+  font-weight: 700; /* Bold part of the text */
+}
+
+.header-right {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.header-desc {
+  color: var(--text-dark);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* =========================================
+   Bottom Grid (Tabs + Content)
+   ========================================= */
+.history-content-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* 300px for tabs, rest for content */
+  gap: 50px;
+}
+
+/* --- Vertical Tabs (Left Column) --- */
+.history-tabs-container {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-main);
+  overflow: hidden; /* Keeps active tab inside the rounded corners */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.history-tab {
+  padding: 25px 20px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.history-tab:last-child {
+  border-bottom: none;
+}
+
+/* Active Vertical Tab */
+.history-tab.active {
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+}
+
+.history-tab:not(.active):hover {
+  background-color: var(--bg-offwhite);
+  color: var(--primary-color);
+}
+
+/* --- Content Panels (Middle & Right Columns) --- */
+.history-panel {
+  display: none;
+}
+
+.history-panel.active {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Splits content into Text and Image */
+  gap: 40px;
+  animation: fadeInRight 0.5s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.panel-text h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.panel-text h3 strong {
+  font-weight: 700;
+}
+
+.panel-text p {
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Reusing your custom layered list styling */
+.custom-list {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.list-icon {
+  margin-right: 15px;
+  width: 1.5em;
+  font-size: 1.1rem;
+}
+.icon-bg {
+  color: var(--primary-color);
+}
+.icon-check {
+  font-size: 0.55em;
+  margin-top: 1px;
+}
+
+/* Image Column */
+.panel-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-main);
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* --- LARGE SCREENS & TABLETS (Max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+  /* Stack the tabs on top of the content area */
+  .history-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Convert vertical tabs into a horizontal, scrollable row */
+  .history-tabs-container {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    /* Hide scrollbar for a cleaner look */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .history-tabs-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  .history-tab {
+    flex: 0 0 auto; /* Allows tabs to sit side-by-side without shrinking */
+    padding: 20px 30px;
+    border-bottom: none;
+    border-right: 1px solid #f0f0f0; /* Separate tabs horizontally */
+  }
+
+  .history-tab:last-child {
+    border-right: none;
+  }
+}
+
+/* --- TABLETS & LARGE PHONES (Max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+  /* Stack the Header (Title on top, description on bottom) */
+  .history-header {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .header-right {
+    max-width: 100%; /* Allow description to take full width */
+  }
+
+  /* Stack the Panel Content (Text on top, Image on bottom) */
+  .history-panel.active {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Adjust Typography */
+  .header-left h2 {
+    font-size: 2.4rem;
+  }
+
+  .panel-text h3 {
+    font-size: 2rem;
+  }
+
+  /* Adjust image height for tablets */
+  .panel-image img {
+    min-height: 250px;
+    max-height: 350px;
+  }
+}
+
+/* --- MOBILE PHONES (Max-width: 576px) --- */
+@media screen and (max-width: 576px) {
+  /* Reduce overall section padding */
+  .history-section {
+    padding: 50px 1.5rem;
+  }
+
+  /* Make tabs slightly smaller for easier tapping */
+  .history-tab {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+  }
+
+  .header-left h2 {
+    font-size: 2rem;
+  }
+
+  .header-left .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .panel-text h3 {
+    font-size: 1.7rem;
+  }
+
+  .panel-text p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  .custom-list li {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================================
+   Global Root Variables (If you haven't added these yet)
+   ========================================= */
+
+/* =========================================
+   Container & Layout
+   ========================================= */
+.faq-section {
+  padding: 80px 2rem;
+  background-color: var(--bg-white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   Header & Button Area
+   ========================================= */
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.faq-title-area .subtitle {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.faq-title-area h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.faq-title-area h2 strong {
+  font-weight: 700;
+}
+
+/* Custom Split Button styling */
+.btn-all-faqs {
+  display: inline-flex;
+  align-items: stretch;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.btn-all-faqs:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 153, 0, 0.2);
+}
+
+.btn-text {
+  padding: 12px 25px;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-icon {
+  padding: 12px 18px;
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   Grid Layout (Image + Accordion)
+   ========================================= */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: stretch;
+}
+
+/* --- Left Column: Image & Overlay --- */
+.faq-image-col {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.faq-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contact-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Dark gradient to make white text readable */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding: 50px 30px 30px;
+  display: flex;
+  gap: 30px;
+  color: var(--bg-light);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.contact-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* --- Right Column: Accordion --- */
+.faq-accordion-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  border: 1px solid #eaeaea;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--bg-light);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  padding: 22px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.faq-question .icon {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* --- Active State Styling (Orange Box) --- */
+.faq-item.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(255, 153, 0, 0.15);
+}
+
+.faq-item.active .faq-question {
+  color: var(--bg-light);
+}
+
+/* Rotates the chevron to point up when active */
+.faq-item.active .faq-question .icon {
+  transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 25px 25px; /* Adds bottom padding only when open */
+}
+
+.faq-item.active .faq-answer p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   Responsive Media Queries
+   ========================================= */
+@media screen and (max-width: 992px) {
+  /* Stack image and accordion on tablets */
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Stack the header text and button */
+  .faq-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .faq-title-area h2 {
+    font-size: 2.2rem;
+  }
+
+  .contact-overlay {
+    flex-direction: column;
+    gap: 15px;
+    padding: 60px 20px 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .faq-section {
+    padding: 50px 1rem;
+  }
+
+  .faq-title-area h2 {
+    font-size: 1.8rem;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 18px 20px;
+  }
+}

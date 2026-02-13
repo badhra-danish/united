@@ -1,0 +1,309 @@
+/* =========================================
+   Global Root Variables
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+:root {
+  /* Brand Colors */
+  --primary-color: #14427e; /* The brand orange */
+  --bg-dark: #0d1216; /* Footer dark background */
+  --bg-light: #ffffff; /* Standard white background */
+
+  /* Text Colors */
+  --text-dark: #333333; /* Main headings */
+  --text-muted: #777777; /* Paragraph text */
+  --text-light: #ffffff; /* Text on dark backgrounds */
+
+  --bg-offwhite: #f9f9f9;
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius-lg: 20px;
+  --box-shadow-main: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   Main Layout & Grid
+   ========================================= */
+.faq-detailed-section {
+  padding: 80px 2rem;
+  background-color: #fafafa; /* Slight off-white background helps white cards pop */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.faq-detailed-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr; /* Sidebar is 320px, Content takes the rest */
+  gap: 50px;
+
+  /* CRITICAL: Prevents sidebar from stretching full height, allowing sticky to work */
+  align-items: flex-start;
+}
+
+.faq-sidebar {
+  position: sticky;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* --- Menu Widget --- */
+.sidebar-menu-widget {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-main);
+  padding: 15px 0;
+}
+
+.sidebar-menu-widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu-widget ul li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu-widget ul li:last-child a {
+  border-bottom: none;
+}
+
+.sidebar-menu-widget ul li a i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px; /* Changed from 80px to 30px to make it a perfect square */
+  font-size: 1rem;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-menu-widget ul li a:hover {
+  color: var(--primary-color);
+  background-color: rgba(255, 153, 0, 0.03);
+}
+
+.sidebar-menu-widget ul li a:hover i {
+  color: var(--primary-color);
+  transform: translate(3px, -3px);
+}
+
+/* --- Help Card Widget --- */
+.sidebar-help-card {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  padding: 40px 30px;
+  color: var(--bg-light);
+  box-shadow: var(--box-shadow-main);
+  background-color: var(--bg-dark);
+}
+
+.help-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.help-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.85); /* Dark overlay */
+  z-index: 1;
+}
+
+.help-content {
+  position: relative;
+  z-index: 2;
+}
+
+.help-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius-lg);
+  padding: 1rem;
+}
+.help-logo img {
+  width: 50%;
+  height: 100%;
+}
+.help-logo i {
+  color: var(--primary-color);
+}
+
+.help-content h3 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.help-content h3 strong {
+  font-weight: 700;
+}
+
+.help-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.contact-line i {
+  width: 35px;
+  height: 35px;
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+/* =========================================
+   RIGHT COLUMN (Content Area)
+   ========================================= */
+.faq-group {
+  margin-bottom: 60px;
+}
+
+.faq-group h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+.faq-group h2 strong {
+  font-weight: 700;
+}
+
+/* Accordion Items */
+.faq-item {
+  border: 1px solid #c2c2c2;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--bg-light);
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  padding: 22px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.faq-question .icon {
+  font-size: 0.9rem;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Active State Styles */
+.faq-item.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(255, 153, 0, 0.15);
+}
+
+.faq-item.active .faq-question {
+  color: var(--bg-light);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px; /* Arbitrary large number to allow content to open */
+  padding: 0 25px 25px;
+}
+
+.faq-item.active .faq-answer p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+@media screen and (max-width: 992px) {
+  .faq-detailed-container {
+    /* Stack layout: Sidebar on top, Content below */
+    grid-template-columns: 1fr;
+  }
+
+  .faq-sidebar {
+    position: relative; /* Disable sticky on tablet/mobile */
+    top: 0;
+    flex-direction: row; /* Put menu and help card side-by-side */
+    gap: 30px;
+  }
+
+  .sidebar-menu-widget,
+  .sidebar-help-card {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .faq-detailed-section {
+    padding: 80px 1.5rem;
+  }
+  .faq-sidebar {
+    flex-direction: column; /* Stack sidebar items vertically on small phones */
+  }
+  .faq-group h2 {
+    font-size: 2rem;
+  }
+}

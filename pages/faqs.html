@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../asset/css/main.css" rel="stylesheet" />
+    <link href="../asset/css/about.css" rel="stylesheet" />
+    <link href="../asset/css/faqs.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <title>United Auto Industry</title>
+    <link rel="icon" href="../images/unitedLogo.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/unitedLogo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/unitedLogo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/unitedLogo.png"
+    />
+  </head>
+  <body>
+    <div class="header-main">
+      <nav class="navbar">
+        <div class="logo-img">
+          <img src="../images/unitedLogo.png" />
+        </div>
+        <input type="checkbox" id="check" />
+        <label for="check" class="menu-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <div class="nav-list">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/aboutus.html">About</a></li>
+            <li class="product-nav" onclick="toggleMobileDropdown()">
+              <div class="product">
+                Products
+                <div><i class="fa-solid fa-chevron-down arrow-down"></i></div>
+              </div>
+
+              <ul class="product-list">
+                <li>Abc</li>
+                <li>Abc</li>
+                <li>Abc</li>
+                <li>Abc</li>
+                <li>Abc</li>
+                <li>Abc</li>
+              </ul>
+            </li>
+            <li><a href="../pages/contactus.html">Contact Us</a></li>
+            <div class="nav-btn-2">
+              <button>Enquire Now</button>
+            </div>
+          </ul>
+        </div>
+        <div class="nav-btn">
+          <button>Enquire Now</button>
+        </div>
+      </nav>
+    </div>
+
+    <section class="page-hero">
+      <div class="hero-content">
+        <h1>Frequently asked questions</h1>
+        <div class="breadcrumbs">
+          <a href="#">Home</a>
+          <span class="dot">•</span>
+          <span class="current-page">Faqs</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-detailed-section">
+      <div class="faq-detailed-container">
+        <aside class="faq-sidebar">
+          <nav class="sidebar-menu-widget">
+            <ul>
+              <li>
+                <a href="#general-info"
+                  >General Information <i class="fa-solid fa-arrow-up-right"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#implementation"
+                  >Implementation And Integration
+                  <i class="fa-solid fa-arrow-up-right"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#cost-roi"
+                  >Cost And ROI <i class="fa-solid fa-arrow-up-right"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#tech-innovation"
+                  >Technology And Innovation
+                  <i class="fa-solid fa-arrow-up-right"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="sidebar-help-card">
+            <div class="help-overlay"></div>
+
+            <div class="help-content">
+              <div class="help-logo">
+                <img src="../images/unitedLogo.png" />
+              </div>
+
+              <h3>Need <strong>help!</strong></h3>
+              <p>Got questions or need assistance with your Industry needs?</p>
+
+              <div class="help-contact-info">
+                <div class="contact-line">
+                  <i class="fa-solid fa-phone-volume"></i>
+                  <span>+1 840 841 256</span>
+                </div>
+                <div class="contact-line">
+                  <i class="fa-regular fa-envelope"></i>
+                  <span>info@domain.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="faq-content-area">
+          <div id="general-info" class="faq-group">
+            <h2>General <strong>information</strong></h2>
+
+            <div class="faq-item active">
+              <div class="faq-question">
+                What industries do you serve?
+                <i class="fa-solid fa-chevron-down icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We implement rigorous quality control measures at every stage
+                  of production, ensuring consistency and high standards.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                How do you ensure product quality?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We adhere to strict international standards, utilizing
+                  advanced testing facilities.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                What sustainability practices do you follow?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We focus on reducing waste and minimizing our carbon
+                  footprint.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Do you offer customized solutions?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Yes, our engineering team works closely with clients to
+                  develop tailor-made solutions.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                How do you handle safety in the workplace?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Safety is our top priority. We conduct regular training and
+                  enforce strict safety protocols.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="implementation" class="faq-group">
+            <h2>Implementation and <strong>integration</strong></h2>
+
+            <div class="faq-item active">
+              <div class="faq-question">
+                What industries do you serve?
+                <i class="fa-solid fa-chevron-down icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We implement rigorous quality control measures at every stage
+                  of production.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                How long does integration take?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Depending on the scale of the operation, integration can take
+                  anywhere from 2 to 6 weeks.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                How long does integration take?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Depending on the scale of the operation, integration can take
+                  anywhere from 2 to 6 weeks.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                How long does integration take?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Depending on the scale of the operation, integration can take
+                  anywhere from 2 to 6 weeks.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                How long does integration take?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Depending on the scale of the operation, integration can take
+                  anywhere from 2 to 6 weeks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="general-info" class="faq-group">
+            <h2>General <strong>information</strong></h2>
+
+            <div class="faq-item active">
+              <div class="faq-question">
+                What industries do you serve?
+                <i class="fa-solid fa-chevron-down icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We implement rigorous quality control measures at every stage
+                  of production, ensuring consistency and high standards.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                How do you ensure product quality?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We adhere to strict international standards, utilizing
+                  advanced testing facilities.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                What sustainability practices do you follow?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We focus on reducing waste and minimizing our carbon
+                  footprint.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Do you offer customized solutions?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Yes, our engineering team works closely with clients to
+                  develop tailor-made solutions.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                How do you handle safety in the workplace?
+                <i class="fa-solid fa-chevron-up icon"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Safety is our top priority. We conduct regular training and
+                  enforce strict safety protocols.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <img src="../images/FooterbgImg.png" class="bg-img" />
+      <div class="footer-main">
+        <div class="footer-cta">
+          <div class="cta-text">
+            <h2>Ready to work with us?</h2>
+            <p>
+              Join us to experience cutting-edge industrial solutions that drive
+              innovation, lasting success.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-content">
+          <div class="footer-col brand-col">
+            <div class="footer-logo">
+              <img src="../images/unitedLogo.png" />
+            </div>
+            <p>
+              We are committed to providing personalized industrial solutions.
+            </p>
+
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Security</h3>
+            <ul>
+              <li><a href="#">Term & Condition</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <ul class="contact-info">
+              <li>+91 123654789</li>
+              <li>Info@Domainname.Com</li>
+              <li>520, West Valley, Amin And Minim</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>Copyright © 2024 All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../asset/JS/script.js"></script>
+  </body>
+</html>

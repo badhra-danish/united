@@ -86,31 +86,39 @@ const clientData = [
 const track = document.getElementById("testimonialTrack");
 
 const loadClientTestimonial = () => {
-  track.innerHTML = "";
+  if (!track) {
+    return;
+  }
 
-  let starIcons = " ";
+  let allSlidesHtml = "";
 
   clientData.forEach((client) => {
+    // 3. CLEANER: Create and reset the stars variable INSIDE the loop
+    let starIcons = "";
+
     for (let i = 0; i < client.stars; i++) {
       starIcons += `<i class="fa-solid fa-star"></i>`;
     }
+
     const slideHtml = `
-        <div class="testi-slide">
-          <div class="stars">${starIcons}</div>
-          <p class="quote">"${client.quote}"</p>
-          <div class="user-profile">
-            <img src="${client.image}" alt="${client.name}">
-            <div class="user-info">
-              <h4>${client.name}</h4>
-              <span>${client.role}</span>
-            </div>
+      <div class="testi-slide">
+        <div class="stars">${starIcons}</div>
+        <p class="quote">"${client.quote}"</p>
+        <div class="user-profile">
+          <img src="${client.image}" alt="${client.name}">
+          <div class="user-info">
+            <h4>${client.name}</h4>
+            <span>${client.role}</span>
           </div>
         </div>
-      `;
+      </div>
+    `;
 
-    track.innerHTML += slideHtml;
-    starIcons = "";
+    // Add this slide to our master string
+    allSlidesHtml += slideHtml;
   });
+
+  track.innerHTML = allSlidesHtml;
 };
 loadClientTestimonial();
 
@@ -168,24 +176,99 @@ const productData = [
 const productTrak = document.getElementById("product-main");
 
 const loadAllProductCard = () => {
+  if (!productTrak) {
+    return;
+  }
+
+  let allProductsHtml = "";
+
   productData.forEach((product) => {
-    const productHtml = `<div class="product-card">
-            <div class="product-img-box">
-              <img
-                src=${product.img}
-                alt="Piaggio Ape Body Parts"
-              />
-              <div class="overlay">
-                <a href="#" class="view-btn">View Details</a>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>${product.name}</h3>
-              <p>${product.description}</p>
-            </div>
-          </div>`;
-    productTrak.innerHTML += productHtml;
+    // 3. Added quotes around ${product.img} for proper HTML formatting
+    const productHtml = `
+      <div class="product-card">
+        <div class="product-img-box">
+          <img src="${product.img}" alt="Piaggio Ape Body Parts" />
+          <div class="overlay">
+            <a href="#" class="view-btn">View Details</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>${product.name}</h3>
+          <p>${product.description}</p>
+        </div>
+      </div>
+    `;
+
+    allProductsHtml += productHtml;
   });
+
+  productTrak.innerHTML = allProductsHtml;
 };
 
+// Now you can safely call this at the bottom of your script
 loadAllProductCard();
+
+function headerActivity() {
+  // 1. Select the individual clickable tabs (not the header container)
+  const tabItems = document.querySelectorAll(".tab-item");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+  tabItems.forEach(function (tab, index) {
+    tab.addEventListener("click", () => {
+      tabItems.forEach(function (item) {
+        item.classList.remove("active");
+      });
+      tabPanels.forEach(function (panel) {
+        panel.classList.remove("active");
+      });
+
+      tab.classList.add("active");
+      tabPanels[index].classList.add("active");
+    });
+  });
+  console.log(tabItems);
+}
+
+headerActivity();
+
+function historyActivity() {
+  const historyTab = document.querySelectorAll(".history-tab");
+  const historyPanel = document.querySelectorAll(".history-panel");
+  historyTab.forEach(function (tab, index) {
+    tab.addEventListener("click", () => {
+      historyTab.forEach(function (tabItem) {
+        tabItem.classList.remove("active");
+      });
+      historyPanel.forEach(function (history) {
+        history.classList.remove("active");
+      });
+      tab.classList.add("active");
+      historyPanel[index].classList.add("active");
+    });
+  });
+}
+historyActivity();
+console.log("dsfadf");
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+if (faqItems.length > 0) {
+  faqItems.forEach((item) => {
+    // Select the question header inside each item
+    const questionHeader = item.querySelector(".faq-question");
+
+    questionHeader.addEventListener("click", () => {
+      // Check if the clicked item is already active
+      const isActive = item.classList.contains("active");
+
+      // 1. First, close ALL FAQ items and reset their icons to point UP (closed state)
+      faqItems.forEach((otherItem) => {
+        otherItem.classList.remove("active");
+      });
+
+      // 2. If the item we clicked was NOT active, open it!
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    });
+  });
+}

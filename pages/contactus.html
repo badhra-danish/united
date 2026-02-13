@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../asset/css/main.css" rel="stylesheet" />
+    <link href="../asset/css/about.css" rel="stylesheet" />
+    <link href="../asset/css/contactus.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <title>United Auto Industry</title>
+    <link rel="icon" href="../images/unitedLogo.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/unitedLogo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/unitedLogo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/unitedLogo.png"
+    />
+  </head>
+  <body>
+    <div class="header-main">
+      <nav class="navbar">
+        <div class="logo-img">
+          <img src="../images/unitedLogo.png" />
+        </div>
+        <input type="checkbox" id="check" />
+        <label for="check" class="menu-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <div class="nav-list">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/aboutus.html">About</a></li>
+            <li class="product-nav" onclick="toggleMobileDropdown()">
+              <div class="product">
+                Products
+                <div><i class="fa-solid fa-chevron-down arrow-down"></i></div>
+              </div>
+
+              <ul class="product-list">
+                <li>Abc</li>
+                <li>Abc</li>
+                <li>Abc</li>
+                <li>Abc</li>
+                <li>Abc</li>
+                <li>Abc</li>
+              </ul>
+            </li>
+            <li><a href="../pages/contactus.html">Contact Us</a></li>
+            <div class="nav-btn-2">
+              <button>Enquire Now</button>
+            </div>
+          </ul>
+        </div>
+        <div class="nav-btn">
+          <button>Enquire Now</button>
+        </div>
+      </nav>
+    </div>
+    <section class="page-hero">
+      <div class="hero-content">
+        <h1>Contact Us</h1>
+        <div class="breadcrumbs">
+          <a href="#">Home</a>
+          <span class="dot">•</span>
+          <span class="current-page"> Contact Us</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-grid">
+          <div class="contact-info-col">
+            <div class="section-title-area">
+              <span class="subtitle"
+                ><i class="fa-solid fa-gear"></i> CONTACT US</span
+              >
+              <h2>Get in touch <strong>with us</strong></h2>
+              <p class="section-desc">
+                Reach out for any inquiries, support, or to discuss how we can
+                meet your industrial needs.
+              </p>
+            </div>
+
+            <div class="contact-details-list">
+              <div class="detail-item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-phone-volume"></i>
+                </div>
+                <div class="text-box">
+                  <h4>Contact</h4>
+                  <p>+1.809.120.670</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <div class="icon-box">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="text-box">
+                  <h4>Email</h4>
+                  <p>info@domain.com</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="text-box">
+                  <h4>Our Address</h4>
+                  <p>37 San Juan Lane Graaf Florisstraat 22A, 3021 CH</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-col">
+            <div class="form-wrapper">
+              <h3>Contact <strong>me</strong></h3>
+
+              <form action="#" class="custom-form">
+                <div class="form-row split-row">
+                  <div class="input-group error">
+                    <input type="text" placeholder="Enter first name" />
+                  </div>
+                  <div class="input-group error">
+                    <input type="text" placeholder="Enter last name" />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="input-group error">
+                    <input type="email" placeholder="Enter your e-mail" />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="input-group error">
+                    <input type="tel" placeholder="Enter your phone no." />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="input-group">
+                    <textarea placeholder="Write Message" rows="5"></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                  <span class="btn-text">Submit Message</span>
+                  <span class="sumbit-btn-icon"
+                    ><i class="fa-solid fa-arrow-up-right"></i
+                  ></span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14576.15949143592!2d72.38158013231765!3d24.02965905568964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395cf26aafc0e7c9%3A0x970ebc89fdac2103!2sChhapi%2C%20Gujarat%20385210!5e0!3m2!1sen!2sin!4v1770979819463!5m2!1sen!2sin"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+    <footer class="footer-section">
+      <img src="../images/FooterbgImg.png" class="bg-img" />
+      <div class="footer-main">
+        <div class="footer-cta">
+          <div class="cta-text">
+            <h2>Ready to work with us?</h2>
+            <p>
+              Join us to experience cutting-edge industrial solutions that drive
+              innovation, lasting success.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-content">
+          <div class="footer-col brand-col">
+            <div class="footer-logo">
+              <img src="../images/unitedLogo.png" />
+            </div>
+            <p>
+              We are committed to providing personalized industrial solutions.
+            </p>
+
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Security</h3>
+            <ul>
+              <li><a href="#">Term & Condition</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <ul class="contact-info">
+              <li>+91 123654789</li>
+              <li>Info@Domainname.Com</li>
+              <li>520, West Valley, Amin And Minim</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>Copyright © 2024 All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../asset/JS/script.js"></script>
+  </body>
+</html>
