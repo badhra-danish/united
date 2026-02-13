@@ -143,7 +143,10 @@
   width: 100%;
   transition: background 0.3s ease;
 }
-
+.nav-list ul .product-list li a {
+  text-decoration: none;
+  color: #000;
+}
 .nav-list ul .product-list li:hover {
   background-color: #f1f1f1;
   color: #014287;
@@ -307,7 +310,9 @@
     color: #555;
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
   }
-
+  .nav-list ul .product-list li a {
+    color: #555;
+  }
   /* Class added by JS to open it */
   .nav-list ul .product-list.open {
     max-height: 400px;

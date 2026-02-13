@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../asset/css/main.css" rel="stylesheet" />
+    <link href="../asset/css/about.css" rel="stylesheet" />
+    <link href="../../asset/css/product/ape.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <title>United Auto Industry</title>
+    <link rel="icon" href="../../images/unitedLogo.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../images/unitedLogo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/unitedLogo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../images/unitedLogo.png"
+    />
+  </head>
+  <body>
+    <div class="header-main">
+      <nav class="navbar">
+        <div class="logo-img">
+          <img src="../../images/unitedLogo.png" />
+        </div>
+        <input type="checkbox" id="check" />
+        <label for="check" class="menu-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <div class="nav-list">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./pages/aboutus.html">About</a></li>
+            <li class="product-nav" onclick="toggleMobileDropdown()">
+              <div class="product">
+                Products
+                <div><i class="fa-solid fa-chevron-down arrow-down"></i></div>
+              </div>
+
+              <ul class="product-list">
+                <li>
+                  <a href="./pages/product/piaggieape.html">Piaggio Ape</a>
+                </li>
+                <li>
+                  <a href="./pages/product/bajaj3wheeler.html"
+                    >Bajaj 3 Wheeler</a
+                  >
+                </li>
+                <li>Mahindra Alfa</li>
+                <li>
+                  <a href="./pages/product/tataAce.html">Tata Ace</a>
+                </li>
+                <li>
+                  <a href="./pages/product/tataMaic.html">Tata Magic</a>
+                </li>
+                <li>Mahindra Maxximo / Supro</li>
+                <li>Ashok Leyland – DOST</li>
+                <li>Eicher</li>
+                <li>Others</li>
+              </ul>
+            </li>
+            <li><a href="./pages/contactus.html">Contact Us</a></li>
+            <div class="nav-btn-2">
+              <button>Enquire Now</button>
+            </div>
+          </ul>
+        </div>
+        <div class="nav-btn">
+          <button>Enquire Now</button>
+        </div>
+      </nav>
+    </div>
+    <section class="catalog-section">
+      <div class="catalog-container">
+        <div class="catalog-header">
+          <div class="section-title-area">
+            <span class="subtitle"
+              ><i class="fa-solid fa-gear"></i> OUR PRODUCTS</span
+            >
+            <h2>Spare Parts <strong>Catalog</strong></h2>
+          </div>
+
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">
+              All Parts
+            </button>
+            <button class="filter-btn" data-filter="dost">
+              Ashok Leyland - DOST
+            </button>
+            <button class="filter-btn" data-filter="other">Other Models</button>
+          </div>
+        </div>
+
+        <div class="category-banner">
+          <div class="banner-text">
+            <h3 id="current-category-title">Bajaj 3 Wheeler</h3>
+            <p>Premium quality aftermarket body parts and accessories.</p>
+          </div>
+          <div class="banner-image">
+            <img
+              src="../../images/bajaj-3wheeler.jpg"
+              alt="Ashok Leyland Dost"
+              id="current-category-img"
+            />
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <div class="product-card" data-category="dost">
+            <div class="card-img-box">
+              <img
+                src="../../images/product/bajaj3wheeler/bj-03-glass-frame-compact-optima-maxima.jpg"
+                alt="Trey Complete"
+              />
+              <div class="card-overlay">
+                <a href="#" class="btn-card">
+                  <span class="btn-text">View Details</span>
+                  <span class="btn-icon"
+                    ><i class="fa-solid fa-arrow-up-right"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="part-code">AD-07</span>
+              <h4>Trey Complete</h4>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="dost">
+            <div class="card-img-box">
+              <img
+                src="../../images/product/bajaj3wheeler/bj-08-rear-flooring.jpg"
+                alt="Cabin Flooring-Full"
+              />
+              <div class="card-overlay">
+                <a href="#" class="btn-card">
+                  <span class="btn-text">View Details</span>
+                  <span class="btn-icon"
+                    ><i class="fa-solid fa-arrow-up-right"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="part-code">AD-06</span>
+              <h4>Cabin Flooring-Full</h4>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="dost">
+            <div class="card-img-box">
+              <img
+                src="../../images/product/bajaj3wheeler/bj-10-front-mudguard.jpg"
+                alt="Cabin Flooring-Half"
+              />
+              <div class="card-overlay">
+                <a href="#" class="btn-card">
+                  <span class="btn-text">View Details</span>
+                  <span class="btn-icon"
+                    ><i class="fa-solid fa-arrow-up-right"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="part-code">AD-06-A</span>
+              <h4>Cabin Flooring-Half</h4>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="other">
+            <div class="card-img-box">
+              <img
+                src="../../images/product/bajaj3wheeler/bj-15-engine-door-compact.jpg"
+                alt="Top"
+              />
+              <div class="card-overlay">
+                <a href="#" class="btn-card">
+                  <span class="btn-text">View Details</span>
+                  <span class="btn-icon"
+                    ><i class="fa-solid fa-arrow-up-right"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="part-code">AD-05</span>
+              <h4>Top / Roof Panel</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="productModal" class="product-modal">
+        <div class="modal-content">
+          <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+
+          <div class="modal-img-col">
+            <img id="modalImage" src="" alt="Product Detail Image" />
+          </div>
+
+          <div class="modal-text-col">
+            <span class="part-code" id="modalCode">AD-00</span>
+            <h3 id="modalTitle">Product Name</h3>
+
+            <p class="modal-desc">
+              This premium aftermarket part is manufactured to meet or exceed
+              original equipment specifications. Engineered for perfect fitment,
+              extreme durability, and long-lasting performance in industrial
+              environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <img src="../../images/FooterbgImg.png" class="bg-img" />
+      <div class="footer-main">
+        <div class="footer-cta">
+          <div class="cta-text">
+            <h2>Ready to work with us?</h2>
+            <p>
+              Join us to experience cutting-edge industrial solutions that drive
+              innovation, lasting success.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-content">
+          <div class="footer-col brand-col">
+            <div class="footer-logo">
+              <img src="../../images/unitedLogo.png" />
+            </div>
+            <p>
+              We are committed to providing personalized industrial solutions.
+            </p>
+
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Security</h3>
+            <ul>
+              <li><a href="#">Term & Condition</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <ul class="contact-info">
+              <li>+91 123654789</li>
+              <li>Info@Domainname.Com</li>
+              <li>520, West Valley, Amin And Minim</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>Copyright © 2024 All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../../asset/JS/script.js"></script>
+    <script src="../../asset/JS/product/ape.js"></script>
+  </body>
+</html>

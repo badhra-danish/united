@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+:root {
+  /* Brand Colors */
+  --primary-color: #14427e; /* The brand orange */
+  --bg-dark: #0d1216; /* Footer dark background */
+  --bg-light: #ffffff; /* Standard white background */
+
+  /* Text Colors */
+  --text-dark: #333333; /* Main headings */
+  --text-muted: #777777; /* Paragraph text */
+  --text-light: #ffffff; /* Text on dark backgrounds */
+
+  --bg-offwhite: #f9f9f9;
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius-lg: 20px;
+  --box-shadow-main: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+.catalog-section {
+  padding: 80px 2rem;
+  background-color: var(--bg-offwhite, #fcfcfc);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 5rem;
+}
+
+.catalog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header & Filters */
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 12px 25px;
+  background-color: var(--bg-white, #ffffff);
+  border: 1px solid var(--border-light, #eaeaea);
+  border-radius: 30px; /* Pill shape */
+  color: var(--text-dark, #333333);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 29, 157, 0.284);
+}
+
+/* =========================================
+   Category Banner
+   ========================================= */
+.category-banner {
+  background-color: #f0f4f8; /* Soft industrial blue/grey */
+  border-radius: var(--border-radius-lg, 20px);
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  border-left: 5px solid var(--primary-color);
+}
+
+.banner-text h3 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.banner-image img {
+  max-height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* =========================================
+   Product Grid & Cards
+   ========================================= */
+.product-grid {
+  display: grid;
+  /* Auto-fit creates a responsive grid without media queries! */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background-color: var(--bg-white, #ffffff);
+  border: 1px solid var(--border-light, #eaeaea);
+  border-radius: var(--border-radius-sm, 10px);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+  border-color: transparent;
+}
+
+/* Image Box */
+.card-img-box {
+  position: relative;
+  padding: 30px;
+  background-color: #ffffff;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #fafafa;
+  overflow: hidden;
+}
+
+.card-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .card-img-box img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Interactive Overlay (Slide Up) */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reused Template Button Style for the Card */
+.btn-card {
+  display: inline-flex;
+  align-items: stretch;
+  background: none;
+  border: 1px solid var(--primary-color, #ff9900);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn-card .btn-text {
+  padding: 10px 15px;
+  background-color: #ffffff;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-card .btn-icon {
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text Info Area */
+.card-info {
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.part-code {
+  display: inline-block;
+  color: var(--primary-color, #ff9900);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.card-info h4 {
+  color: var(--text-dark, #333333);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Animation for filtering */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .catalog-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+}
+/* =========================================
+   Product Modal Styling
+   ========================================= */
+.product-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 9999; /* Sit on top of absolutely everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  backdrop-filter: blur(5px); /* Premium blurry background effect */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Class added by JavaScript to show the modal */
+.product-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: var(--bg-white, #ffffff);
+  border-radius: var(--border-radius-lg, 20px);
+  max-width: 900px;
+  width: 90%;
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  position: relative;
+  transform: translateY(-50px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy pop-in */
+}
+
+.product-modal.show .modal-content {
+  transform: translateY(0);
+}
+
+/* Close Button */
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.close-modal:hover {
+  color: var(--primary-color, #ff9900);
+  transform: rotate(90deg);
+}
+
+/* Modal Columns */
+.modal-img-col {
+  flex: 1;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-img-col img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.modal-text-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-text-col h3 {
+  font-size: 2rem;
+  color: var(--text-dark, #333333);
+  margin-bottom: 15px;
+}
+
+.modal-desc {
+  color: var(--text-light, #777777);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Responsive Modal (Stack columns on phones) */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+    max-height: 90vh;
+    overflow-y: auto; /* Allow scrolling if screen is too small */
+  }
+
+  .modal-img-col img {
+    max-height: 200px;
+  }
+}
