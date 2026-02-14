@@ -24,14 +24,14 @@
 }
 .catalog-section {
   padding: 80px 2rem;
-  background-color: var(--bg-offwhite, #fcfcfc);
+  background-color: #c4cad3;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 5rem;
 }
 
 .catalog-container {
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 5rem;
 }
 
 /* Header & Filters */
@@ -211,7 +211,7 @@
 
 .part-code {
   display: inline-block;
-  color: var(--primary-color, #ff9900);
+  color: var(--primary-color);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 1px;

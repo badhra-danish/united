@@ -311,7 +311,10 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
   }
   .nav-list ul .product-list li a {
-    color: #555;
+    color: #000000;
+  }
+  .nav-list ul li a {
+    color: #000;
   }
   /* Class added by JS to open it */
   .nav-list ul .product-list.open {

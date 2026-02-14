@@ -129,48 +129,56 @@ const productData = [
     name: "Tata Ace",
     description: "Heavy Duty Parts",
     img: "../../images/TataAce.webp",
+    link: "../../pages/product/tataAce.html",
   },
   {
     id: 2,
     name: "Tata Magic",
     description: "Passenger Body Shells",
     img: "../../images/TataMagic.png",
+    link: "../../pages/product/tataMaic.html",
   },
   {
     id: 3,
     name: "EICHER",
     description: "Truck Body Components",
     img: "../../images/Eicher.jpg",
+    link: "../../pages/product/tataAce.html",
   },
   {
     id: 4,
     name: "Ashok Leyland DOST",
     description: "Commercial Parts",
     img: "../../images/ashokleylandDost.webp",
+    link: "../../pages/product/tataAce.html",
   },
   {
     id: 5,
     name: "Mahindra Maxximo",
     description: "Supro Body Parts",
     img: "../../images/mahindra-maxximo-load.webp",
+    link: "../../pages/product/tataAce.html",
   },
   {
     id: 6,
     name: "Mahindra Alfa",
     description: "Chassis & Body Panels",
     img: "../../images/mahindraAlfa.png",
+    link: "../../pages/product/piaggieape.html",
   },
   {
     id: 7,
     name: "Bajaj 3 Wheeler",
     description: "Premium Body Kits",
     img: "../../images/bajaj-3wheeler.jpg",
+    link: "../../pages/product/bajaj3wheeler.html",
   },
   {
     id: 8,
     name: "Piaggio Ape",
     description: "Complete Body Parts",
     img: "../../images/piaggioApe.jpg",
+    link: "../../pages/product/piaggieape.html",
   },
 ];
 const productTrak = document.getElementById("product-main");
@@ -189,7 +197,7 @@ const loadAllProductCard = () => {
         <div class="product-img-box">
           <img src="${product.img}" alt="Piaggio Ape Body Parts" />
           <div class="overlay">
-            <a href="#" class="view-btn">View Details</a>
+            <a href=${product.link} class="view-btn">View Details</a>
           </div>
         </div>
         <div class="product-info">
